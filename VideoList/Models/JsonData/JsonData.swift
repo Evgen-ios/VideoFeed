@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - Videos
+// MARK: - JsonData
 struct JsonData: Codable {
     let record: Record
     let metadata: Metadata
@@ -33,6 +33,7 @@ struct Record: Codable {
 
 // MARK: - Video
 struct Video: Codable {
-    let id, username, releaseDate: String
+    let id, username, releaseDate, videoName: String
+    let urlImage: String
     let url: String
 }

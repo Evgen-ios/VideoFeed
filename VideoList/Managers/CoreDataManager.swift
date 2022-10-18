@@ -100,6 +100,21 @@ public class CoreDataManager {
         return coreData
     }
     
+    ///  Get category sorted with name
+    /// - Returns: return [VideoCoreData]
+    func getVideos() -> [VideoCoreData] {
+        let fetchRequest: NSFetchRequest<VideoCoreData> = VideoCoreData.fetchRequest()
+        let sort = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sort]
+        
+        guard let videoCoreData = try? viewContext.fetch(fetchRequest) else {
+            print("ERROR: Can't get categoryCoreData")
+            return []
+        }
+        
+        return videoCoreData
+    }
+    
     /// Check object by id from CoreData
     /// - Parameters:
     ///   - entityName: entity name into CoreData
