@@ -10,7 +10,7 @@ import Foundation
 public class NetworkManager {
     // MARK: - Static Properties
     /// URL for getting videos from JSON
-    internal static let url = URL(string: "https://api.jsonbin.io/v3/b/634e6d6f65b57a31e69a3a27")!
+    internal static let url = URL(string: "https://api.jsonbin.io/v3/b/634edc362b3499323be2e15b")!
     
     /// Default shared instance of Network Manager
     public static let shared = NetworkManager()

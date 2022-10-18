@@ -34,7 +34,7 @@ public class CoreDataManager {
     /// Add category into CoreData
     /// - Parameter category: Category
     func appendVideo(video: Video) {
-        var videoCoreData = VideoCoreData(context: viewContext)
+        let videoCoreData = VideoCoreData(context: viewContext)
         
         guard someEntityExists(entityName: VideoCoreData.className, with: video.id) else {
             print("False")
@@ -45,7 +45,8 @@ public class CoreDataManager {
         videoCoreData.username = video.username
         videoCoreData.releaseDate = video.releaseDate
         videoCoreData.url = URL(string: video.url)
-        videoCoreData.urlImage = URL(string: video.urlImage ?? "")
+        videoCoreData.urlImage = URL(string: video.urlImage)
+        videoCoreData.videoName = video.videoName
         
         downloadImage(url: videoCoreData.urlImage) {data in
             videoCoreData.image = UIImage(data: data)
@@ -74,7 +75,7 @@ public class CoreDataManager {
     }
     
     /// Get video sorted with name
-    ///  - Returns: return [VideoCoreData]
+    ///  - Returns: return [T]
     /// - Parameter sorted: sorted by name
     func getCoreData<T: NSManagedObject>(object: AnyClass ,sorted: Bool? = false) -> [T] {
         
@@ -85,11 +86,11 @@ public class CoreDataManager {
         
         if sorted ?? false {
             // Sorted by name
-            let sort = NSSortDescriptor(key: "name", ascending: true)
+            let sort = NSSortDescriptor(key: "username", ascending: true)
             fetchRequest.sortDescriptors = [sort]
         }
         
-        let sort = NSSortDescriptor(key: "name", ascending: true)
+        let sort = NSSortDescriptor(key: "username", ascending: true)
         fetchRequest.sortDescriptors = [sort]
         
         guard let coreData = try? viewContext.fetch(fetchRequest) else {
@@ -104,7 +105,7 @@ public class CoreDataManager {
     /// - Returns: return [VideoCoreData]
     func getVideos() -> [VideoCoreData] {
         let fetchRequest: NSFetchRequest<VideoCoreData> = VideoCoreData.fetchRequest()
-        let sort = NSSortDescriptor(key: "name", ascending: true)
+        let sort = NSSortDescriptor(key: "videoName", ascending: true)
         fetchRequest.sortDescriptors = [sort]
         
         guard let videoCoreData = try? viewContext.fetch(fetchRequest) else {

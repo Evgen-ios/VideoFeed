@@ -8,6 +8,22 @@
 import Foundation
 
 extension AppDelegate {
+    /// Check app was start firs or not
+    func firstRun() {
+        let videos = CoreDataManager.shared.getVideos()
+        
+        if !notFirstRun || videos.count == 0 {
+            getVideos {_ in}
+            UserDefaults.standard.set(true, forKey: "notFirstLaunch")
+        } else {
+            print("Welcome back, Video count:", videos.count)
+            for video in videos {
+                print("ID:\(String(describing: video.id)) VideoName: \(String(describing: video.videoName))")
+            }
+        }
+        
+    }
+    
     /// Get the videos from the server
     /// - Parameter completion: closure called when request is finished, with true if request is succesfull, and false if not
     func getVideos(completion: @escaping (_ success: Bool) -> Void) {
@@ -21,7 +37,10 @@ extension AppDelegate {
                 return
             }
             
-            print("INFO: Successful loaded \(videos.count) videos")
+            for video in videos {
+                print("ID:\(video.id) VideoName: \(video.videoName)")
+                CoreDataManager.shared.appendVideo(video: video)
+            }
             
             DispatchQueue.main.async {
                 // Post notification with name

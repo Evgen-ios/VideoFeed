@@ -14,13 +14,13 @@ extension VideoCoreData {
         return NSFetchRequest<VideoCoreData>(entityName: "VideoCoreData")
     }
 
-    @NSManaged public var id: String?
+    @NSManaged public var id: String
     @NSManaged public var image: UIImage?
-    @NSManaged public var releaseDate: String?
+    @NSManaged public var releaseDate: String
     @NSManaged public var url: URL?
     @NSManaged public var urlImage: URL?
-    @NSManaged public var username: String?
-    @NSManaged public var videoName: String?
+    @NSManaged public var username: String
+    @NSManaged public var videoName: String
 
 }
 

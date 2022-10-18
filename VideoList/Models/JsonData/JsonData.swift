@@ -33,7 +33,19 @@ struct Record: Codable {
 
 // MARK: - Video
 struct Video: Codable {
-    let id, username, releaseDate, videoName: String
+    let id: String
+    let username: String
+    let releaseDate: String
+    let videoName: String
     let urlImage: String
     let url: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case username
+        case releaseDate
+        case videoName
+        case urlImage
+        case url
+    }
 }

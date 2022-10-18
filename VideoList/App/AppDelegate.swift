@@ -10,13 +10,13 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    // UserDefaults
+    let notFirstRun = UserDefaults.standard.bool(forKey: "notFirstLaunch")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        // Initialize data from Json
-        getVideos { _ in}
+
+        firstRun()
         
         return true
     }
