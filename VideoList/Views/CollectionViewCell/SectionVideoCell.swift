@@ -9,6 +9,9 @@ import UIKit
 
 class SectionVideoCell: UICollectionViewCell {
     
+    // MARK: - Properties
+    var video: VideoCoreData?
+    
     // MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -20,12 +23,12 @@ class SectionVideoCell: UICollectionViewCell {
     
     // MARK: - Helper Methods
     func configure(video: VideoCoreData) {
+        self.video = video
         DispatchQueue.main.async {
             self.imageView.image = video.image
             self.imageView.layer.cornerRadius = 15
             self.titleLabel.text = video.username
         }
-        
     }
     
 }

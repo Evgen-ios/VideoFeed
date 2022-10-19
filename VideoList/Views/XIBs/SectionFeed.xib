@@ -3,7 +3,6 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,26 +22,26 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XkM-Zj-1XS" userLabel="imageView">
                                 <rect key="frame" x="2" y="2" width="164" height="104"/>
                             </imageView>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QlE-JK-nOA">
-                                <rect key="frame" x="56.666666666666671" y="37" width="54.666666666666671" height="34.333333333333343"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <imageReference key="image" image="play.rectangle.fill" catalog="system" symbolScale="large" variableValue="1"/>
-                                    <color key="baseForegroundColor" red="1" green="1" blue="0.99999994039999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6cN-2r-jVd">
+                                <rect key="frame" x="58.666666666666671" y="30.666666666666664" width="50.666666666666671" height="46.666666666666679"/>
+                                <color key="tintColor" red="1" green="1" blue="0.99999994039999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6cN-2r-jVd" secondAttribute="height" multiplier="1:1" id="PdO-DO-eEj"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="XkM-Zj-1XS" secondAttribute="trailing" constant="2" id="1kC-nw-VoF"/>
                             <constraint firstAttribute="bottom" secondItem="XkM-Zj-1XS" secondAttribute="bottom" constant="2" id="BXT-vV-TSe"/>
                             <constraint firstItem="XkM-Zj-1XS" firstAttribute="top" secondItem="2QK-H2-q2F" secondAttribute="top" constant="2" id="Fb6-ED-IL8"/>
-                            <constraint firstItem="QlE-JK-nOA" firstAttribute="centerX" secondItem="2QK-H2-q2F" secondAttribute="centerX" id="fhI-hd-bs6"/>
-                            <constraint firstItem="QlE-JK-nOA" firstAttribute="centerY" secondItem="2QK-H2-q2F" secondAttribute="centerY" id="hbt-SY-7Dt"/>
+                            <constraint firstItem="6cN-2r-jVd" firstAttribute="centerY" secondItem="2QK-H2-q2F" secondAttribute="centerY" id="HQw-8l-gV5"/>
+                            <constraint firstItem="6cN-2r-jVd" firstAttribute="centerX" secondItem="2QK-H2-q2F" secondAttribute="centerX" id="aOp-iD-qsI"/>
+                            <constraint firstItem="6cN-2r-jVd" firstAttribute="width" secondItem="2QK-H2-q2F" secondAttribute="width" multiplier="0.3" id="iYO-cc-gSq"/>
                             <constraint firstAttribute="width" secondItem="2QK-H2-q2F" secondAttribute="height" multiplier="14:9" id="saN-Gq-GXr"/>
                             <constraint firstItem="XkM-Zj-1XS" firstAttribute="leading" secondItem="2QK-H2-q2F" secondAttribute="leading" constant="2" id="y7W-KJ-HNe"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6c-SW-7H6">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6c-SW-7H6">
                         <rect key="frame" x="8" y="116" width="156" height="27"/>
                         <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="20"/>
                         <nil key="textColor"/>
@@ -68,6 +67,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="play.rectangle.fill" catalog="system" width="128" height="93"/>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
     </resources>
 </document>

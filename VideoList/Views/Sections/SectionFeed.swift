@@ -1,5 +1,5 @@
 //
-//  VideoSection.swift
+//  SectionFeed.swift
 //  VideoList
 //
 //  Created by Evgeniy Goncharov on 18.10.2022.
@@ -7,7 +7,8 @@
 
 import UIKit
 
-struct SectionVideo: Section {
+struct SectionFeed: Section {
+    
     // MARK: - Properties
     var numberOfItems = 1
     
