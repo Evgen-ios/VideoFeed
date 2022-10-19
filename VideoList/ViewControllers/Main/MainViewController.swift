@@ -9,6 +9,10 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    // MARK: - Properties
+    let notificationCenter = NotificationCenter.default
+    let notificationName: String = "downloadedJson"
+    
     // MARK: - Lazy Properties
     lazy var videos = CoreDataManager.shared.getVideos()
     
@@ -42,6 +46,7 @@ class MainViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
         configureLayout()
+        configureObserver()
     }
     
     // MARK: - Private Helper Methods
@@ -59,6 +64,26 @@ class MainViewController: UIViewController {
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
+    }
+    
+    private func configureObserver() {
+        notificationCenter.addObserver(self, selector: #selector(reloadData), name: Notification.Name(notificationName), object: nil)
+    }
+    
+    @objc func reloadData() {
+        print(notificationName)
+        videos = CoreDataManager.shared.getVideos()
+        
+        // Set updated section
+        sections[0] = configureSectionVideo()
+        collectionView.reloadSections(IndexSet(integer: 0))
+        
+        // Remove observer
+        NotificationCenter.default.removeObserver(
+            self,
+            name: Notification.Name(notificationName),
+            object: nil
+        )
     }
     
 }

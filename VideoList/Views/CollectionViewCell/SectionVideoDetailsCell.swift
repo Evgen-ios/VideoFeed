@@ -63,7 +63,6 @@ class SectionVideoDetailsCell: UICollectionViewCell {
         let videoPlayerWorker = VideoPlayerManager.shared
         player = videoPlayerWorker.play(with: videoUrl)
         
-        //player = AVPlayer(playerItem: playerItem)
         self.playerViewController = AVPlayerViewController()
         playerViewController.player = self.player
         player.automaticallyWaitsToMinimizeStalling = true

@@ -25,7 +25,13 @@ class SectionVideoCell: UICollectionViewCell {
     func configure(video: VideoCoreData) {
         self.video = video
         DispatchQueue.main.async {
-            self.imageView.image = video.image
+            if video.image != nil {
+                self.imageView.image = video.image
+            } else {
+                guard let url = video.urlImage else { return }
+                self.imageView.load(url: url)
+            }
+
             self.imageView.layer.cornerRadius = 15
             self.titleLabel.text = video.username
         }
