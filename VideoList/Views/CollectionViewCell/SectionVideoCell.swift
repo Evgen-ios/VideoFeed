@@ -20,8 +20,12 @@ class SectionVideoCell: UICollectionViewCell {
     
     // MARK: - Helper Methods
     func configure(video: VideoCoreData) {
-        imageView.image = video.image
-        titleLabel.text = video.username
+        DispatchQueue.main.async {
+            self.imageView.image = video.image
+            self.imageView.layer.cornerRadius = 15
+            self.titleLabel.text = video.username
+        }
+        
     }
     
 }

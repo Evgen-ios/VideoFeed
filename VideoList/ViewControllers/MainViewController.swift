@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        collectionView.register(UINib(nibName: String(describing: SectionVideo.self), bundle: nil), forCellWithReuseIdentifier: String(describing: SectionVideo.self))
+        collectionView.register(UINib(nibName: String(describing: SectionVideo.self), bundle: nil), forCellWithReuseIdentifier: String(describing: SectionVideoCell.self))
         
         return collectionView
     }()
@@ -44,9 +44,22 @@ class MainViewController: UIViewController {
         return sectionVideo
     }
     
+    public func configureLayout() {
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(collectionView)
+        
+        //configureSearchController()
+        configureLayout()
     }
     
     

@@ -17,16 +17,17 @@ struct SectionVideo: Section {
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets.leading = 4
-        item.contentInsets.trailing = 8
+        item.contentInsets.trailing = 4
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.5))
+        //let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item, item])
         let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
+        section.orthogonalScrollingBehavior = .paging
         
         section.contentInsets.top = 16
-        section.contentInsets.trailing = 16
-        section.contentInsets.leading = 16
+        section.contentInsets.trailing = 0
+        section.contentInsets.leading = 0
         
         return section
     }

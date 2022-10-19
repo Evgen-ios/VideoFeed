@@ -76,7 +76,7 @@ public class NetworkManager {
     // MARK: - Methods
     /// Call videos API
     /// - Parameter completion: closure called after the request is finished, with JSON data if successfull, or with nil if not
-    func getVideos(completion: @escaping (_ jsonData: JsonData?) -> Void) {
+    func getVideos(completion: @escaping (_ : VideoModel?) -> Void) {
         get(completion: completion)
     }
 }

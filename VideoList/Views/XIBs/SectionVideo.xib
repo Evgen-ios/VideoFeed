@@ -3,57 +3,71 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="IbD-7t-3Al" customClass="SectionVideoCell" customModule="VideoList">
-            <rect key="frame" x="0.0" y="0.0" width="156" height="117"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="IbD-7t-3Al" customClass="SectionVideoCell" customModule="VideoList" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="168" height="148"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WGu-KM-n9V">
-                <rect key="frame" x="0.0" y="0.0" width="156" height="117"/>
+                <rect key="frame" x="0.0" y="0.0" width="168" height="148"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2QK-H2-q2F">
-                        <rect key="frame" x="8" y="4" width="140" height="90"/>
+                        <rect key="frame" x="0.0" y="4" width="168" height="108"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XkM-Zj-1XS" userLabel="imageView">
-                                <rect key="frame" x="2" y="2" width="136" height="86"/>
+                                <rect key="frame" x="2" y="2" width="164" height="104"/>
                             </imageView>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QlE-JK-nOA">
+                                <rect key="frame" x="56.666666666666671" y="37" width="54.666666666666671" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="play.rectangle.fill" catalog="system" symbolScale="large" variableValue="1"/>
+                                    <color key="baseForegroundColor" red="1" green="1" blue="0.99999994039999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="XkM-Zj-1XS" secondAttribute="trailing" constant="2" id="1kC-nw-VoF"/>
                             <constraint firstAttribute="bottom" secondItem="XkM-Zj-1XS" secondAttribute="bottom" constant="2" id="BXT-vV-TSe"/>
                             <constraint firstItem="XkM-Zj-1XS" firstAttribute="top" secondItem="2QK-H2-q2F" secondAttribute="top" constant="2" id="Fb6-ED-IL8"/>
+                            <constraint firstItem="QlE-JK-nOA" firstAttribute="centerX" secondItem="2QK-H2-q2F" secondAttribute="centerX" id="fhI-hd-bs6"/>
+                            <constraint firstItem="QlE-JK-nOA" firstAttribute="centerY" secondItem="2QK-H2-q2F" secondAttribute="centerY" id="hbt-SY-7Dt"/>
                             <constraint firstAttribute="width" secondItem="2QK-H2-q2F" secondAttribute="height" multiplier="14:9" id="saN-Gq-GXr"/>
                             <constraint firstItem="XkM-Zj-1XS" firstAttribute="leading" secondItem="2QK-H2-q2F" secondAttribute="leading" constant="2" id="y7W-KJ-HNe"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6c-SW-7H6">
-                        <rect key="frame" x="12" y="94" width="136" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="8" y="116" width="156" height="27"/>
+                        <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="s6c-SW-7H6" firstAttribute="top" secondItem="2QK-H2-q2F" secondAttribute="bottom" id="BhX-87-gHu"/>
-                    <constraint firstAttribute="trailing" secondItem="2QK-H2-q2F" secondAttribute="trailing" constant="8" id="OWo-4P-Hhg"/>
-                    <constraint firstAttribute="trailing" secondItem="2QK-H2-q2F" secondAttribute="trailing" constant="8" id="awG-qS-Rtm"/>
-                    <constraint firstItem="s6c-SW-7H6" firstAttribute="leading" secondItem="2QK-H2-q2F" secondAttribute="leading" constant="4" id="j8P-9j-w00"/>
-                    <constraint firstItem="2QK-H2-q2F" firstAttribute="leading" secondItem="WGu-KM-n9V" secondAttribute="leading" constant="8" id="jQ6-7p-KtV"/>
-                    <constraint firstAttribute="trailing" secondItem="s6c-SW-7H6" secondAttribute="trailing" constant="8" id="qKk-r6-bfz"/>
+                    <constraint firstAttribute="trailing" secondItem="2QK-H2-q2F" secondAttribute="trailing" id="OWo-4P-Hhg"/>
+                    <constraint firstItem="s6c-SW-7H6" firstAttribute="top" secondItem="2QK-H2-q2F" secondAttribute="bottom" constant="4" id="XWT-56-8HM"/>
+                    <constraint firstAttribute="trailing" secondItem="2QK-H2-q2F" secondAttribute="trailing" id="awG-qS-Rtm"/>
+                    <constraint firstItem="s6c-SW-7H6" firstAttribute="leading" secondItem="2QK-H2-q2F" secondAttribute="leading" constant="8" id="j8P-9j-w00"/>
+                    <constraint firstItem="2QK-H2-q2F" firstAttribute="leading" secondItem="WGu-KM-n9V" secondAttribute="leading" id="jQ6-7p-KtV"/>
+                    <constraint firstAttribute="trailing" secondItem="s6c-SW-7H6" secondAttribute="trailing" constant="4" id="qKk-r6-bfz"/>
                     <constraint firstItem="2QK-H2-q2F" firstAttribute="top" secondItem="WGu-KM-n9V" secondAttribute="top" constant="4" id="xdo-yV-x8Z"/>
                 </constraints>
             </collectionViewCellContentView>
-            <size key="customSize" width="133" height="15"/>
+            <size key="customSize" width="145" height="46"/>
             <connections>
                 <outlet property="imageView" destination="XkM-Zj-1XS" id="Ojg-Ol-m2g"/>
                 <outlet property="titleLabel" destination="s6c-SW-7H6" id="sCy-Cj-ias"/>
             </connections>
-            <point key="canvasLocation" x="-383.07692307692304" y="-8.8862559241706158"/>
+            <point key="canvasLocation" x="-373.84615384615381" y="2.1327014218009479"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="play.rectangle.fill" catalog="system" width="128" height="93"/>
+    </resources>
 </document>
