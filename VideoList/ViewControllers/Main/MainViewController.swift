@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        collectionView.register(UINib(nibName: String(describing: SectionVideo.self), bundle: nil), forCellWithReuseIdentifier: String(describing: SectionVideoCell.self))
+        collectionView.register(UINib(nibName: String(describing: SectionFeed.self), bundle: nil), forCellWithReuseIdentifier: String(describing: SectionVideoCell.self))
         
         return collectionView
     }()
@@ -35,33 +35,31 @@ class MainViewController: UIViewController {
         configureSectionVideo()
     ]
     
-    // MARK: - Helper Methods
+    // MARK: - Inherited Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(collectionView)
+        configureLayout()
+    }
+    
+    // MARK: - Private Helper Methods
     /// Configure
     /// - Returns: configure section
-    func configureSectionVideo() -> SectionVideo {
-        var sectionVideo = SectionVideo()
+    private func configureSectionVideo() -> SectionFeed {
+        var sectionVideo = SectionFeed()
         sectionVideo.numberOfItems = videos.count
         return sectionVideo
     }
     
-    public func configureLayout() {
+    private func configureLayout() {
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(collectionView)
-        
-        //configureSearchController()
-        configureLayout()
-    }
-    
     
 }
 
