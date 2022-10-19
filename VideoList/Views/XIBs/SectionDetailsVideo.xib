@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="vSY-wm-hvN" customClass="SectionVideoDetailsCell" customModule="VideoList" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="261" height="315"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TOk-lm-R1f">
+                <rect key="frame" x="0.0" y="0.0" width="261" height="315"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5t-X2-jJC">
+                        <rect key="frame" x="0.0" y="4" width="265" height="170.33333333333334"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="L5t-X2-jJC" secondAttribute="height" multiplier="14:9" id="XfU-mH-9zY"/>
+                        </constraints>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pkj-CH-xCx">
+                        <rect key="frame" x="8" y="186.33333333333334" width="245" height="19"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDk-Zi-sdW">
+                                <rect key="frame" x="0.0" y="0.0" width="31" height="19"/>
+                                <fontDescription key="fontDescription" name="NotoSansKannada-Light" family="Noto Sans Kannada" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJi-Mj-Wqo">
+                                <rect key="frame" x="203.66666666666666" y="0.0" width="41.333333333333343" height="19"/>
+                                <fontDescription key="fontDescription" name="NotoSansKannada-Light" family="Noto Sans Kannada" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vmB-Fd-xIe">
+                        <rect key="frame" x="8" y="215.33333333333334" width="245" height="30"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fVn-VP-mrH">
+                                <rect key="frame" x="0.0" y="0.99999999999999822" width="30" height="28.666666666666664"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="4Fn-Ar-sXF"/>
+                                    <constraint firstAttribute="width" secondItem="fVn-VP-mrH" secondAttribute="height" multiplier="1:1" id="CR3-oZ-Wgw"/>
+                                    <constraint firstAttribute="height" constant="30" id="lPf-Wc-pLF"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfX-i2-qE4">
+                                <rect key="frame" x="35" y="11" width="210" height="19"/>
+                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name video" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikW-YK-heP">
+                        <rect key="frame" x="8" y="260.33333333333331" width="245" height="23"/>
+                        <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="ikW-YK-heP" secondAttribute="trailing" constant="8" id="8nl-8g-ycc"/>
+                    <constraint firstItem="ikW-YK-heP" firstAttribute="top" secondItem="vmB-Fd-xIe" secondAttribute="bottom" constant="15" id="CyI-3d-NeP"/>
+                    <constraint firstItem="L5t-X2-jJC" firstAttribute="top" secondItem="TOk-lm-R1f" secondAttribute="top" constant="4" id="DmV-EK-jtP"/>
+                    <constraint firstItem="ikW-YK-heP" firstAttribute="leading" secondItem="TOk-lm-R1f" secondAttribute="leading" constant="8" id="KcM-gb-qcT"/>
+                    <constraint firstItem="pkj-CH-xCx" firstAttribute="leading" secondItem="TOk-lm-R1f" secondAttribute="leading" constant="8" id="Kdt-CE-ZaG"/>
+                    <constraint firstAttribute="trailing" secondItem="vmB-Fd-xIe" secondAttribute="trailing" constant="8" id="SPa-dc-B4k"/>
+                    <constraint firstAttribute="trailing" secondItem="pkj-CH-xCx" secondAttribute="trailing" constant="8" id="YjW-E6-TUH"/>
+                    <constraint firstItem="vmB-Fd-xIe" firstAttribute="top" secondItem="pkj-CH-xCx" secondAttribute="bottom" constant="10" id="e6J-aU-Ghn"/>
+                    <constraint firstItem="L5t-X2-jJC" firstAttribute="trailingMargin" secondItem="pkj-CH-xCx" secondAttribute="trailing" constant="4" id="iKt-zR-hM5"/>
+                    <constraint firstItem="vmB-Fd-xIe" firstAttribute="leading" secondItem="TOk-lm-R1f" secondAttribute="leading" constant="8" id="lhw-hx-dEE"/>
+                    <constraint firstItem="pkj-CH-xCx" firstAttribute="top" secondItem="L5t-X2-jJC" secondAttribute="bottomMargin" constant="20" id="z44-cg-ZFE"/>
+                    <constraint firstItem="L5t-X2-jJC" firstAttribute="leading" secondItem="TOk-lm-R1f" secondAttribute="leading" id="zEx-3l-wuu"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="238" height="213"/>
+            <connections>
+                <outlet property="avatar" destination="fVn-VP-mrH" id="jWD-v4-dZV"/>
+                <outlet property="date" destination="lDk-Zi-sdW" id="miA-RR-9nA"/>
+                <outlet property="time" destination="EJi-Mj-Wqo" id="934-rc-mon"/>
+                <outlet property="uiViewVideo" destination="L5t-X2-jJC" id="Hmg-8e-h54"/>
+                <outlet property="userName" destination="NfX-i2-qE4" id="Ghb-Gq-Mlt"/>
+                <outlet property="videoName" destination="ikW-YK-heP" id="7Vp-lS-vYi"/>
+            </connections>
+            <point key="canvasLocation" x="-711.53846153846155" y="49.407582938388622"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
+    </resources>
+</document>
