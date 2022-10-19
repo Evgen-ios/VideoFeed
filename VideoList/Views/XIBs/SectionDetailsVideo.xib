@@ -85,7 +85,7 @@
                 <outlet property="avatar" destination="fVn-VP-mrH" id="jWD-v4-dZV"/>
                 <outlet property="date" destination="lDk-Zi-sdW" id="miA-RR-9nA"/>
                 <outlet property="time" destination="EJi-Mj-Wqo" id="934-rc-mon"/>
-                <outlet property="uiViewVideo" destination="L5t-X2-jJC" id="Hmg-8e-h54"/>
+                <outlet property="uiViewVideo" destination="L5t-X2-jJC" id="oUu-em-TTu"/>
                 <outlet property="userName" destination="NfX-i2-qE4" id="Ghb-Gq-Mlt"/>
                 <outlet property="videoName" destination="ikW-YK-heP" id="7Vp-lS-vYi"/>
             </connections>

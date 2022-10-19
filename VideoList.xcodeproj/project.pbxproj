@@ -34,6 +34,9 @@
 		7A23AA5B28FFCF1800A86D93 /* SectionVideoDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A23AA5A28FFCF1800A86D93 /* SectionVideoDetailsCell.swift */; };
 		7A23AA5D28FFE14700A86D93 /* DetailsViewController+UICollectionViewDataSource.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A23AA5C28FFE14700A86D93 /* DetailsViewController+UICollectionViewDataSource.swift.swift */; };
 		7A23AA5F28FFEB3200A86D93 /* DetailsViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A23AA5E28FFEB3200A86D93 /* DetailsViewController+UICollectionViewDelegate.swift */; };
+		7A23AA6129002BC400A86D93 /* CachingPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A23AA6029002BC400A86D93 /* CachingPlayerItem.swift */; };
+		7A23AA642900319400A86D93 /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 7A23AA632900319400A86D93 /* Cache */; };
+		7A23AA66290031B800A86D93 /* VideoPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A23AA65290031B800A86D93 /* VideoPlayerManager.swift */; };
 		7A3223FA28FF9EEC00BEB100 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3223F928FF9EEC00BEB100 /* DetailsViewController.swift */; };
 		7A3223FC28FFA0DD00BEB100 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A3223FB28FFA0DD00BEB100 /* Details.storyboard */; };
 		7A3223FE28FFB43A00BEB100 /* MainViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3223FD28FFB43A00BEB100 /* MainViewController+Actions.swift */; };
@@ -70,6 +73,8 @@
 		7A23AA5A28FFCF1800A86D93 /* SectionVideoDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionVideoDetailsCell.swift; sourceTree = "<group>"; };
 		7A23AA5C28FFE14700A86D93 /* DetailsViewController+UICollectionViewDataSource.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+UICollectionViewDataSource.swift.swift"; sourceTree = "<group>"; };
 		7A23AA5E28FFEB3200A86D93 /* DetailsViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		7A23AA6029002BC400A86D93 /* CachingPlayerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingPlayerItem.swift; sourceTree = "<group>"; };
+		7A23AA65290031B800A86D93 /* VideoPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerManager.swift; sourceTree = "<group>"; };
 		7A3223F928FF9EEC00BEB100 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		7A3223FB28FFA0DD00BEB100 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		7A3223FD28FFB43A00BEB100 /* MainViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Actions.swift"; sourceTree = "<group>"; };
@@ -80,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A23AA642900319400A86D93 /* Cache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,8 +196,10 @@
 		7A024E6F28FE537200BEA0A1 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				7A23AA6029002BC400A86D93 /* CachingPlayerItem.swift */,
 				7A024E9728FEF60900BEA0A1 /* CoreDataManager.swift */,
 				7A024E7028FE53A000BEA0A1 /* NetworkManager.swift */,
+				7A23AA65290031B800A86D93 /* VideoPlayerManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -217,8 +225,8 @@
 			isa = PBXGroup;
 			children = (
 				7A024E8128FED5F900BEA0A1 /* Section.swift */,
-				7A024E8328FED78400BEA0A1 /* SectionFeed.swift */,
 				7A23AA5628FFC0CA00A86D93 /* SectionDetailsVideo.swift */,
+				7A024E8328FED78400BEA0A1 /* SectionFeed.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -293,6 +301,9 @@
 			dependencies = (
 			);
 			name = VideoList;
+			packageProductDependencies = (
+				7A23AA632900319400A86D93 /* Cache */,
+			);
 			productName = VideoList;
 			productReference = 7A024E4D28FDC7D500BEA0A1 /* VideoList.app */;
 			productType = "com.apple.product-type.application";
@@ -321,6 +332,9 @@
 				Base,
 			);
 			mainGroup = 7A024E4428FDC7D500BEA0A1;
+			packageReferences = (
+				7A23AA622900319400A86D93 /* XCRemoteSwiftPackageReference "Cache" */,
+			);
 			productRefGroup = 7A024E4E28FDC7D500BEA0A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -361,7 +375,9 @@
 				7A23AA5F28FFEB3200A86D93 /* DetailsViewController+UICollectionViewDelegate.swift in Sources */,
 				7A3223FA28FF9EEC00BEB100 /* DetailsViewController.swift in Sources */,
 				7A024E5128FDC7D500BEA0A1 /* AppDelegate.swift in Sources */,
+				7A23AA6129002BC400A86D93 /* CachingPlayerItem.swift in Sources */,
 				7A024E8728FED88000BEA0A1 /* SectionVideoCell.swift in Sources */,
+				7A23AA66290031B800A86D93 /* VideoPlayerManager.swift in Sources */,
 				7A024E9B28FEF6CC00BEA0A1 /* UIImageTransformer.swift in Sources */,
 				7A3223FE28FFB43A00BEB100 /* MainViewController+Actions.swift in Sources */,
 				7A024E9628FEF3B500BEA0A1 /* VideoCoreData+CoreDataProperties.swift in Sources */,
@@ -594,6 +610,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7A23AA622900319400A86D93 /* XCRemoteSwiftPackageReference "Cache" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hyperoslo/Cache.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7A23AA632900319400A86D93 /* Cache */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A23AA622900319400A86D93 /* XCRemoteSwiftPackageReference "Cache" */;
+			productName = Cache;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7A024E9028FEF11600BEA0A1 /* DataModel.xcdatamodeld */ = {

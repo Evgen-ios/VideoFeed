@@ -21,8 +21,6 @@ extension VideoCoreData {
     @NSManaged public var urlImage: URL?
     @NSManaged public var username: String
     @NSManaged public var videoName: String
-
 }
 
-extension VideoCoreData: Identifiable {
-}
+extension VideoCoreData: Identifiable {}
