@@ -66,4 +66,8 @@ class DetailsViewController: UIViewController {
         configureLayout()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        VideoPlayerManager.player.stop()
+    }
 }
