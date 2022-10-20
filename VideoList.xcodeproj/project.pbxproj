@@ -42,6 +42,7 @@
 		7A3223FA28FF9EEC00BEB100 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3223F928FF9EEC00BEB100 /* DetailsViewController.swift */; };
 		7A3223FC28FFA0DD00BEB100 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A3223FB28FFA0DD00BEB100 /* Details.storyboard */; };
 		7A3223FE28FFB43A00BEB100 /* MainViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3223FD28FFB43A00BEB100 /* MainViewController+Actions.swift */; };
+		7A5585B529011411001632E3 /* AVPlayer+stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5585B429011411001632E3 /* AVPlayer+stop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		7A3223F928FF9EEC00BEB100 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		7A3223FB28FFA0DD00BEB100 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		7A3223FD28FFB43A00BEB100 /* MainViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Actions.swift"; sourceTree = "<group>"; };
+		7A5585B429011411001632E3 /* AVPlayer+stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+stop.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 		7A024E9C28FEF86600BEA0A1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7A5585B329011401001632E3 /* AVPlayer */,
 				7A23AA68290051F300A86D93 /* UIImageView */,
 				7A024E9D28FEF87900BEA0A1 /* Foundation */,
 			);
@@ -307,6 +310,14 @@
 				7A23AA5E28FFEB3200A86D93 /* DetailsViewController+UICollectionViewDelegate.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		7A5585B329011401001632E3 /* AVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				7A5585B429011411001632E3 /* AVPlayer+stop.swift */,
+			);
+			path = AVPlayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +404,7 @@
 				7A024E7128FE53A000BEA0A1 /* NetworkManager.swift in Sources */,
 				7A024E9F28FEF8A200BEA0A1 /* NSObject+className.swift in Sources */,
 				7A024E7428FE55B100BEA0A1 /* JSON.swift in Sources */,
+				7A5585B529011411001632E3 /* AVPlayer+stop.swift in Sources */,
 				7A024E5528FDC7D500BEA0A1 /* MainViewController.swift in Sources */,
 				7A024E6B28FDCA2F00BEA0A1 /* VideoModel.swift in Sources */,
 				7A024E8928FEDC8E00BEA0A1 /* MainViewController+UICollectionViewDataSource.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  VideoDataJson.swift
+//  VideoModel.swift
 //  VideoList
 //
 //  Created by Evgeniy Goncharov on 18.10.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - VideoDataJson
+// MARK: - VideoModel
 struct VideoModel: Codable {
     let record: Record
     let metadata: Metadata

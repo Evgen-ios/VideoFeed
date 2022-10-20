@@ -12,15 +12,15 @@ import Cache
 class VideoPlayerManager {
     
     public static let shared = VideoPlayerManager()
-
-    private var player: AVPlayer!
+    static var player: AVPlayer!
+    
     let diskConfig = DiskConfig(name: "DiskCache")
     let memoryConfig = MemoryConfig(expiry: .never, countLimit: 10, totalCostLimit: 10)
-
+    
     lazy var storage: Cache.Storage<String, Data>? = {
         return try? Cache.Storage(diskConfig: diskConfig, memoryConfig: memoryConfig, transformer: TransformerFactory.forData())
     }()
-
+    
     /// Plays a video either from the network if it's not cached or from the cache.
     func play(with url: URL) -> AVPlayer {
         let playerItem: CachingPlayerItem
@@ -32,18 +32,14 @@ class VideoPlayerManager {
             // The video is not cached.
             playerItem = CachingPlayerItem(url: url)
         }
-
+        
         playerItem.delegate = self
-        self.player = AVPlayer(playerItem: playerItem)
-        self.player.automaticallyWaitsToMinimizeStalling = false
-        self.player.play()
-        return self.player
+        VideoPlayerManager.player = AVPlayer(playerItem: playerItem)
+        VideoPlayerManager.player.automaticallyWaitsToMinimizeStalling = false
+        VideoPlayerManager.player.play()
+        return VideoPlayerManager.player
     }
     
-    func download( with url: URL) {
-        
-    }
-
 }
 
 // MARK: - CachingPlayerItemDelegate
